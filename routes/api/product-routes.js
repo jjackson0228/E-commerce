@@ -125,7 +125,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-  // delete one product by its `id` valu
+  // delete one product by its `id` value
   // This route deletes a product by its id. It returns a 404 error if no product with the given id is found.
   try {
     const product = await Product.destroy({
