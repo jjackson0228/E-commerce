@@ -9,9 +9,7 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Product data
   try {
     const tags = await Tag.findAll({
-      include: [
-        { model: Product, through: ProductTag, attributes: ['product_name'] },
-      ],
+      include: [{ model: Product }],
     });
     res.status(200).json(tags);
   } catch (err) {
@@ -27,9 +25,7 @@ router.get('/:id', async (req, res) => {
   try {
     const tag = await Tag.findOne({
       where: { id: req.params.id },
-      include: [
-        { model: Product, through: ProductTag, attributes: ['product_name'] },
-      ],
+      include: [{ model: Product }],
     });
 
     if (!tag) {
@@ -88,7 +84,9 @@ router.delete('/:id', async (req, res) => {
       return;
     }
 
-    res.status(200).json({ message: 'Tag deleted successfully!' });
+    res
+      .status(200)
+      .json({ message: 'Tag deleted successfully!', tag: deletedTag });
   } catch (err) {
     console.error(err);
     res.status(500).json(err);

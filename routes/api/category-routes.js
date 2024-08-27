@@ -9,11 +9,12 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Products
   try {
     const categories = await Category.findAll({
+      //find all categories and include product from model
       include: [{ model: Product }],
     });
-    res.status(200).json(categories);
+    res.status(200).json(categories); //return data for categories
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err); //throw error if issue is there
   }
 });
 
@@ -22,7 +23,7 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Products
   try {
     const category = await Category.findOne({
-      where: { id: req.params.id },
+      where: { id: req.params.id }, //find one product and category by id including product name
       include: [{ model: Product }],
     });
 
@@ -30,7 +31,7 @@ router.get('/:id', async (req, res) => {
       res.status(404).json({ message: 'No category found with this id!' });
       return;
     }
-    res.status(200).json(category);
+    res.status(200).json(category); //returns data in response
   } catch (err) {
     res.status(500).json(err);
   }
@@ -39,10 +40,11 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   // create a new category
   try {
-    const newCategory = await Category.create(req.body);
-    res.status(200).json(newCategory);
-  } catch (err) {
-    res.status(400).json(err);
+    const newCategory = await Category.create(req.body); //creates new category using request body
+
+    res.status(200).json(newCategory); //sensds data for post category
+  } catch (e) {
+    res.status(400).json(e); // throw error if one exists
   }
 });
 
