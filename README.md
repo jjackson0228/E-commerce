@@ -15,7 +15,7 @@ This application uses api routes to retrieve data for Products, Categories, and 
    - After downloading the GitHub files, navigate to the `server.js` file.
    - Right-click and select "Open Integrated Terminal."
    - Run `npm install` in the terminal to install the necessary npm packages.
-   - If user does not have `Insomnia` installed they need to install it. Here is the link [Insomnia](https://insomnia.rest/download).
+   - If user does not have `Insomnia` installed they need to install it. Here is the link to install [Insomnia](https://insomnia.rest/download).
 
 2. **Set Up the Database**
 
