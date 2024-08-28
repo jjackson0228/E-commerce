@@ -6,7 +6,25 @@
 
 ## Description of App
 
-This application uses api routes to retrieve data for Products, Categories, and Tags to organize an E-Commerce shop's inventory and putting the Items for sale with labels like Products, categories, and tags to make all the data easily retrievable by unique id's for all the products, categories, and tags. This makes creating new products, tags, and categories easy. As well as updating and deleting these items are equally as easy. Using `Insomnia` you can GET categories, products, and tags by all and by id for one item at a time. You can also POST to create a new product, category, or tag. Using PUT you can update the name and other information by id, and DELETE deletes the item by id.
+This application provides a comprehensive solution for managing an e-commerce shop’s inventory. It leverages API routes to handle **Products**, **Categories**, and **Tags**, allowing you to organize and manage your inventory efficiently.
+
+Key features include:
+
+- **Retrieval of Data**: Fetch information about Products, Categories, and Tags using unique IDs. This ensures easy access and organization of inventory items.
+- **CRUD Operations**: Seamlessly create, update, and delete items.
+  - **Create**: Add new Products, Categories, or Tags with ease.
+  - **Read**: Retrieve detailed information about all items or a specific item by its ID using GET requests.
+  - **Update**: Modify existing items’ details, such as names and attributes, with PUT requests.
+  - **Delete**: Remove items from the inventory by ID using DELETE requests.
+
+Testing and interacting with the API is straightforward using **Insomnia**. You can:
+
+- **GET**: Retrieve lists of all items or individual items by ID.
+- **POST**: Create new Products, Categories, or Tags.
+- **PUT**: Update details of existing items by ID.
+- **DELETE**: Remove items by ID.
+
+This application simplifies inventory management for e-commerce stores, providing an intuitive interface for maintaining and organizing products and related data.
 
 ## Installation
 
@@ -28,9 +46,22 @@ This application uses api routes to retrieve data for Products, Categories, and 
    - In the terminal `server.js`, run `npm start` or `node server.js` to start the server and application.
    - Navigate to Insomnia application.
 
-## How to Use the Application
+## How to Use the App
+
+1. **Start the Server**: Run `npm start` to launch the application.
+
+2. **Interact with the API**: Use a tool like **Insomnia** to make API requests. Here’s how:
+   - **GET** `/api/products`, `/api/categories`, `/api/tags`: Retrieve lists of products, categories, or tags.
+   - **GET** `/api/products/:id`, `/api/categories/:id`, `/api/tags/:id`: Retrieve a specific item by ID.
+   - **POST** `/api/products`, `/api/categories`, `/api/tags`: Create new items by providing details in the request body.
+   - **PUT** `/api/products/:id`, `/api/categories/:id`, `/api/tags/:id`: Update existing items by ID with new details.
+   - **DELETE** `/api/products/:id`, `/api/categories/:id`, `/api/tags/:id`: Delete items by ID.
+
+This app allows you to manage your inventory efficiently through these API endpoints.
 
 ## Video Example of how to use
+
+[Walkthrough video link](https://drive.google.com/file/d/1sSF7vCYZKHgtlnmiDK9YEil8za7zidZV/preview)
 
 ## Tools and languages used
 
