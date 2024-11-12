@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { up } = require('inquirer/lib/utils/readline');
+
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
@@ -78,12 +78,10 @@ router.delete('/:id', async (req, res) => {
       return;
     }
 
-    res
-      .status(200)
-      .json({
-        message: 'Category deleted successfully!',
-        status: deletedCategory,
-      });
+    res.status(200).json({
+      message: 'Category deleted successfully!',
+      status: deletedCategory,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
